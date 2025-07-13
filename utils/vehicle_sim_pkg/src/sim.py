@@ -244,7 +244,6 @@ if __name__ == "__main__":
         rospy.init_node("Sim")
         sim = Sim()
         sim.loop()
-        # rospy.spin()
     except rospy.ROSInterruptException:
         sim.ser.close()
         pass
