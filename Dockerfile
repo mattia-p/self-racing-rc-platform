@@ -15,13 +15,15 @@ RUN apt update && DEBIAN_FRONTEND=noninteractive apt install --yes \
     rtklib \
     python3-tk \
     ros-noetic-foxglove-bridge \
-    ros-noetic-rqt-reconfigure
+    ros-noetic-rqt-reconfigure \
+    libgeographic-dev
 
 RUN python3 -m pip install \
     pre-commit \
     matplotlib \
     pyshp \
-    utm
+    utm \
+    pykml
 
 COPY requirements.txt /tmp
 RUN python3 -m pip install -r /tmp/requirements.txt

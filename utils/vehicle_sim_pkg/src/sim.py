@@ -8,7 +8,10 @@ import tf
 import utm
 
 from geometry_msgs.msg import PoseStamped, TwistStamped
-from geometry_utils_pkg.geometry_utils import compute_steering_angle_from_curvature, State
+from geometry_utils_pkg.geometry_utils import (
+    compute_steering_angle_from_curvature,
+    State,
+)
 from nmea_msgs.msg import Gprmc
 from std_msgs.msg import Float64
 from vehicle_sim import LateralModel, LongitudinalModel, VehicleSim
@@ -75,8 +78,7 @@ class Sim:
         """
         Callback function to initialize the position and velocity of simulated vehicle when a clicked_point topic is published
         """
-
-        rospy.logwarn("Clicked point callback")
+        rospy.loginfo("Clicked point callback")
 
         # Convert the coordinates from the map to the world frame.
         try:
